@@ -23,9 +23,11 @@ jobs:
         with:
           fetch-depth: 0
       - name: Review con Claude
-        uses: anthropics/claude-code-action/claude-code-review@v1
+        uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          track_progress: "true"
           claude_args: --model claude-haiku-4-5-20251001
       - name: Alza output Claude (artefatto)
         if: always()
