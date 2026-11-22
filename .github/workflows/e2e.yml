@@ -20,6 +20,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: --model claude-3-5-haiku-20241022 --allowedTools "Read,mcp__github_comment__update_claude_comment"
           prompt: >-
             Rivedi questa pull request e scrivi una recensione breve (3 righe)
